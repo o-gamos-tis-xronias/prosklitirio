@@ -1,6 +1,5 @@
-💍 Χ & Λ — Digital Wedding Invitation
+💍 **Χ & Λ — Ψηφιακή Πρόσκληση Γάμου**
 
-A modern, elegant, and fully responsive wedding invitation built with pure HTML & CSS.
+Ένα μοντέρνο, κομψό και πλήρως responsive προσκλητήριο γάμου, φτιαγμένο μόνο με HTML & CSS.
 
-Designed with love, minimalism, and timeless aesthetics — optimized for both desktop and mobile.
-
+Σχεδιασμένο με αγάπη, minimal αισθητική και διαχρονικό ύφος — ιδανικό για οθόνη κινητού και υπολογιστή ✨

@@ -1,0 +1,1466 @@
+/* ===============================
+   FONT DECLARATIONS
+=============================== */
+
+/* GFS DIDOT */
+
+@font-face {
+    font-family: "DidotWedding";
+    src: url("fonts/gfs-didot/GFSDidot-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* JUNI CODE */
+
+@font-face {
+    font-family: "JunicodeWedding";
+    src: url("fonts/junicode/Junicode.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* DIHJAUTI (Accent) */
+
+@font-face {
+    font-family: "DihjautiAccent";
+    src: url("fonts/dihjauti/Dihjauti-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* WISTANIA (Optional Accent) */
+
+@font-face {
+    font-family: "WistaniaAccent";
+    src: url("fonts/wistania/Wistania.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ADDITIONAL FONT VARIANTS (from /fonts) */
+@font-face {
+    font-family: "JunicodeWedding";
+    src: url("fonts/junicode/Junicode-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "JunicodeWedding";
+    src: url("fonts/junicode/Junicode-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "JunicodeWedding";
+    src: url("fonts/junicode/Junicode-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DihjautiAccent";
+    src: url("fonts/dihjauti/Dihjauti-Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "DihjautiAccent";
+    src: url("fonts/dihjauti/Dihjauti-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "DihjautiSignature";
+    src: url("fonts/dihjauti/DihjautiS-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "DihjautiSignature";
+    src: url("fonts/dihjauti/DihjautiS-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* PREMIUM GLOBAL RESET & VARIABLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    /* Luxury warm ivory theme */
+    --bg: #faf7f2;
+    --surface: #ffffff;
+    --accent: #bfa06a;
+    --accent-soft: #d6c4a1;
+    --text: #2f2f2f;
+    --muted: #6f6f6f;
+	
+	--font-heading: "DidotWedding", serif;
+    --font-body: "JunicodeWedding", serif;
+    --font-accent: "DihjautiAccent", cursive;
+    --font-soft-accent: "WistaniaAccent", serif;
+
+    /* Shadows */
+    --soft-shadow: 0 10px 40px rgba(0,0,0,0.04);
+
+    /* Spacing rhythm */
+    --section-padding: 60px;
+	
+    --transition-smooth: all .4s cubic-bezier(.4,0,.2,1);
+    --transition-ease: cubic-bezier(.4,0,.2,1);
+    /* TYPOGRAPHY ENHANCEMENTS */
+    --heading-scale: 1.0; /* multiplier for fine-tuning heading sizes */
+    --lead-size: 1.08; /* multiplier for lead paragraph size */
+    --heading-letter-spacing: 2px;
+    --body-letter-spacing: 0.3px;
+    --text-leading: 2.0; /* body line-height */
+    --numeric-figures: tabular-nums; /* use tabular numbers for clocks, times */
+    --heading-opsz: 48; /* optical size hint where supported */
+
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: var(--text-leading);
+    letter-spacing: var(--body-letter-spacing);
+    color: var(--text);
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures discretionary-ligatures;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    hyphens: auto;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: var(--heading-letter-spacing);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "kern" 1, "liga" 1, "onum" 1, "case" 1;
+    -webkit-font-feature-settings: "kern" 1, "liga" 1;
+}
+
+.accent {
+    font-family: var(--font-accent);
+    font-size: 1.2em;
+}
+
+/* Lead paragraph utility */
+.lead {
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.9;
+    color: var(--text);
+    letter-spacing: 0.2px;
+}
+
+/* Container */
+
+.container {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+section {
+    padding: var(--section-padding) 0;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 1s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== SECTION MUSIC ===== */
+
+.music-control {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+
+    z-index: 999;
+
+    transition: all .4s ease;
+}
+
+.music-control:hover {
+    transform: scale(1.1);
+}
+
+/* ===== SECTION 0: Hero countdown ===== */
+
+.hero {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.35)
+        ),
+        url("assets/herobg.png");
+
+    background-size: cover;
+    background-position: center;
+
+    will-change: transform, opacity;
+    transition: padding .45s var(--transition-ease), background-position .6s var(--transition-ease);
+}
+
+/* Ambient light aura */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(191,160,106,0.18),
+            transparent 65%
+        );
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Sparkle illusion field */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle,
+        rgba(255,255,255,.35) 1px,
+        transparent 1px);
+
+    background-size: 120px 120px;
+    opacity: 0.18;
+    animation: sparkleShift 120s linear infinite;
+    pointer-events: none;
+}
+
+/* Sparkle drift animation */
+@keyframes sparkleShift {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1200px);
+    }
+}
+
+/* Overlay refinement */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(2px);
+}
+
+/* Hero content — IMPORTANT for JS control */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    will-change: transform, opacity;
+}
+
+/* Top text */
+.hero-top-text {
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 28px;
+}
+
+/* Couple Names */
+.couple-names {
+    font-size: clamp(56px, 9vw, 110px);
+    letter-spacing: 5px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    line-height: 1.2;
+    text-shadow:
+        0 2px 20px rgba(0,0,0,0.25);
+}
+
+/* Signature / decorative name style using DihjautiS */
+.signature {
+    font-family: "DihjautiSignature", var(--font-accent);
+    font-size: clamp(40px, 8vw, 96px);
+    color: var(--accent);
+    letter-spacing: 0.6px;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.18);
+    transform: translateY(2px);
+    display: inline-block;
+}
+
+/* Ensure numeric values (countdown, times) keep consistent widths */
+.countdown-box span,
+.detail-time,
+.detail-subtitle {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1, "lnum" 1, "onum" 1;
+}
+
+.ampersand {
+    color: var(--accent);
+    font-size: 0.85em;
+    font-weight: 400;
+}
+
+/* Date */
+.hero-date {
+	font-family: var(--font-heading);
+    font-size: clamp(18px, 3.8vw, 24px);
+    letter-spacing: 4px;
+    margin-top: 30px;
+    opacity: 0.95;
+}
+
+/* Countdown */
+.luxury-countdown {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    animation: heroFadeUp 2s ease-out .4s backwards;
+}
+
+/* Countdown cards */
+.countdown-box {
+    width: 110px;
+    height: 110px;
+    background: rgba(255,255,255,0.96);
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--soft-shadow);
+    border: 1px solid rgba(191,160,106,0.18);
+    transition: transform .38s var(--transition-ease), box-shadow .38s var(--transition-ease), width .38s var(--transition-ease), height .38s var(--transition-ease);
+    will-change: transform, width, height;
+}
+
+.countdown-box span {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.countdown-box small {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+.countdown-box:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+}
+
+/* Mobile safety */
+@media (max-width: 768px) {
+
+    .luxury-countdown {
+        gap: 18px;
+    }
+    .countdown-box {
+        width: 90px;
+        height: 90px;
+    }
+    .countdown-box span {
+        font-size: 32px;
+    }
+    .countdown-box small {
+        font-size: 8px;
+    }
+}
+
+/* ====== SECTION TITLES ====== */
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: clamp(36px, 4.2vw, 56px);
+    margin-bottom: 70px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title {
+    font-variant-caps: small-caps;
+    font-feature-settings: "smcp" 1, "kern" 1;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin: 28px auto 0;
+}
+
+/* ===== SECTION 1: Invitation =====*/
+
+.invitation {
+    position: relative;
+    background: var(--bg);
+    padding: 100px 0;
+}
+.invitation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 30% 40%,
+            rgba(191,160,106,0.06),
+            transparent 60%
+        );
+
+    pointer-events: none;
+}
+.invitation-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 100px;
+    align-items: center;
+    transition: gap .4s var(--transition-ease), padding .4s var(--transition-ease);
+}
+
+.invitation-text h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+
+    font-size: clamp(48px, 6vw, 72px);
+
+    letter-spacing: 4px;
+
+    margin-bottom: 50px;
+}
+
+.invitation-text h2::after {
+    content: "";
+    display: block;
+
+    width: 70px;
+    height: 1px;
+
+    background: var(--accent);
+
+    margin-top: 28px;
+}
+
+.invitation-message {
+    max-width: 520px;
+
+    font-family: var(--font-body);
+    font-size: 19px;
+
+    line-height: 2;
+
+    color: var(--muted);
+
+    letter-spacing: 0.3px;
+}
+
+/* Decorative drop-cap for opening invitation paragraph */
+.invitation-message p::first-letter {
+    float: left;
+    font-family: var(--font-heading);
+    font-size: 4.2rem;
+    line-height: 0.9;
+    color: var(--accent);
+    margin: 6px 16px 0 0;
+    font-weight: 400;
+    letter-spacing: -1px;
+    text-transform: none;
+}
+
+/* Optional utility to show a soft, elegant first paragraph */
+.invitation-message p.lead {
+    font-size: calc(19px * var(--lead-size));
+    color: var(--text);
+}
+
+.detail-block {
+    background: rgba(255,255,255,0.6);
+
+    backdrop-filter: blur(6px);
+
+    padding: 60px 50px;
+
+    border-radius: 40px;
+
+    border: 1px solid rgba(191,160,106,0.15);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.03);
+
+    transition: transform .6s cubic-bezier(.16,1,.3,1);
+}
+
+.detail-block:hover {
+    transform: translateY(-8px);
+}
+
+.detail-block h4 {
+    font-family: var(--font-body);
+
+    text-transform: uppercase;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: var(--accent);
+
+    margin-bottom: 40px;
+}
+
+.detail-block p {
+    font-family: var(--font-body);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+
+    color: var(--muted);
+}
+
+/* ===== SECTION 2: Wedding day =====*/
+
+.wedding-day {
+    padding: 100px 0;
+    position: relative;
+	background: rgba(201,175,130,0.55);
+}
+
+.wedding-day .section-title {
+    font-family: var(--font-heading);
+    font-weight: 400;
+
+    font-size: clamp(44px, 6vw, 72px);
+
+    letter-spacing: 4px;
+
+    margin-bottom: 110px;
+}
+
+.wedding-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    transition: gap .4s var(--transition-ease);
+}
+
+.detail-card {
+    background: rgba(255,255,255,0.55);
+
+    backdrop-filter: blur(8px);
+
+    padding: 80px 60px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(191,160,106,0.15);
+
+    text-align: center;
+
+    transition: transform .6s cubic-bezier(.16,1,.3,1);
+}
+
+.detail-card:hover {
+    transform: translateY(-10px);
+}
+
+.detail-icon {
+    font-size: 36px;
+    margin-bottom: 35px;
+    color: var(--accent);
+    opacity: 0.8;
+}
+
+.detail-card h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+
+    font-size: 36px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 40px;
+}
+
+.detail-time {
+    font-family: var(--font-heading);
+
+    font-size: 56px;
+
+    letter-spacing: 8px;
+
+    color: var(--accent);
+
+    margin-bottom: 15px;
+}
+
+.detail-date {
+    font-family: var(--font-body);
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    color: var(--muted);
+
+    margin-bottom: 45px;
+}
+
+.detail-venue {
+    font-family: var(--font-body);
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    margin-bottom: 14px;
+}
+
+.detail-location {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+.detail-subtitle {
+    font-family: var(--font-heading);
+
+    font-size: 60px;
+
+    letter-spacing: 8px;
+
+    color: var(--accent);
+
+    margin-bottom: 15px;
+}
+.detail-info {
+    font-family: var(--font-body);
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    color: var(--muted);
+
+    margin-bottom: 45px;
+}
+
+.map-link {
+    display: inline-block;
+
+    padding: 14px 34px;
+
+    font-family: var(--font-body);
+    font-size: 13px;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    color: var(--accent);
+
+    border: 1px solid rgba(191,160,106,0.4);
+    border-radius: 40px;
+
+    background: transparent;
+
+    transition: all .5s cubic-bezier(.16,1,.3,1);
+	will-change: transform;
+}
+
+.map-link:hover {
+    background: var(--accent);
+    color: white;
+
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(191,160,106,0.25);
+}
+
+/* ===== SECTION 3: RSVP ===== */
+
+.rsvp {
+    padding: 100px 0;
+    position: relative;
+	background: var(--bg);
+}
+
+.rsvp::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(191,160,106,0.05),
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+
+.rsvp-intro {
+    text-align: center;
+
+    max-width: 760px;
+    margin: 0 auto 90px;
+
+    font-family: var(--font-body);
+    font-size: 19px;
+
+    line-height: 2;
+
+    letter-spacing: 0.3px;
+
+    color: var(--muted);
+}
+
+.rsvp-intro b {
+    font-family: var(--font-body);
+    font-weight: 900;
+}
+
+.rsvp-form {
+    max-width: 900px;
+    margin: auto;
+
+    padding: 80px 70px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(191,160,106,0.15);
+    transition: padding .35s var(--transition-ease), border-radius .35s var(--transition-ease);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+
+    margin-bottom: 50px;
+    transition: gap .35s var(--transition-ease);
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-family: var(--font-body);
+    font-size: 14px;
+	font-weight: 800;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--accent);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 20px 24px;
+
+    border-radius: 40px;
+
+    border: 1px solid rgba(0,0,0,0.08);
+
+    background: rgba(255,255,255,0.7);
+
+    font-family: var(--font-body);
+    font-size: 18px;
+
+    transition: all .4s cubic-bezier(.16,1,.3,1);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+
+    border-color: rgba(191,160,106,0.5);
+
+    box-shadow:
+        0 10px 30px rgba(191,160,106,0.12);
+}
+
+#guests-group {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity .35s ease,
+        max-height .45s ease,
+        visibility .35s ease;
+}
+
+#guests-group.show {
+    visibility: visible;
+    opacity: 1;
+    max-height: 300px;
+    pointer-events: auto;
+}
+
+.submit-btn {
+    display: block;
+
+    margin: 70px auto 0;
+
+    padding: 18px 70px;
+
+    border-radius: 60px;
+    border: 1px solid rgba(191,160,106,0.3);
+
+    background: var(--accent);
+
+    color: white;
+
+    font-family: var(--font-body);
+    font-size: 14px;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: transform .6s cubic-bezier(.16,1,.3,1),
+                box-shadow .6s cubic-bezier(.16,1,.3,1);
+}
+
+.submit-btn:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 50px rgba(191,160,106,0.35);
+}
+
+.confirmation-message {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition: all 0.6s cubic-bezier(.16,1,.3,1);
+}
+
+.confirmation-message.show {
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.confirmation-content {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(212, 175, 55, 0.15);
+    animation: confirmationFade 0.8s ease forwards;
+}
+
+.confirmation-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #d4af37, #c59b2d);
+    box-shadow:
+        0 8px 20px rgba(212, 175, 55, 0.35),
+        inset 0 0 0 4px rgba(255,255,255,0.3);
+    animation: popIn 0.6s cubic-bezier(.16,1,.3,1);
+}
+
+.confirmation-content h3 {
+    font-size: 1.9rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #2d2d2d;
+}
+
+.confirmation-content p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Elegant fade animation */
+
+@keyframes confirmationFade {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Checkmark pop animation */
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===== SECTION 4: Registry ===== */
+
+.gift-registry {
+    padding: 100px 0;
+    position: relative;
+	background: rgba(201,175,130,0.55);
+}
+
+.gift-registry::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 40% 60%,
+            rgba(191,160,106,0.05),
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+.registry-intro {
+    text-align: center;
+
+    max-width: 760px;
+    margin: 0 auto 90px;
+
+    font-family: var(--font-body);
+    font-size: 19px;
+
+    line-height: 2;
+
+    color: var(--muted);
+}
+
+.registry-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    align-items: stretch;
+    transition: gap .4s var(--transition-ease);
+}
+
+.registry-card {
+    background: rgba(255,255,255,0.55);
+
+    backdrop-filter: blur(8px);
+
+    padding: 60px 50px;
+
+    border-radius: 48px;
+
+    border: 1px solid rgba(191,160,106,0.15);
+
+    text-align: center;
+
+    transition: transform .45s var(--transition-ease), padding .35s var(--transition-ease), border-radius .35s var(--transition-ease);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.03);
+}
+
+.registry-card:hover {
+    transform: translateY(-8px);
+}
+
+.registry-card h3 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 50px;
+}
+
+/* Registry icon container (desktop) — ensures consistent visual height */
+.registry-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.registry-icon img,
+.bank-icon-img,
+.iris-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.registry-card h3 {
+    font-size: 28px;
+}
+
+.iban-input,
+.iris-input {
+    font-size: 18px;
+    padding: 18px 22px;
+}
+
+.iban-label,
+.iris-label {
+    font-family: var(--font-body);
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    font-size: 13px;
+	font-weight: 600;
+
+    color: var(--accent);
+
+    margin-bottom: 18px;
+}
+
+.iban-input,
+.iris-input {
+    width: 100%;
+
+    padding: 20px 24px;
+
+    border-radius: 40px;
+
+    border: 1px solid rgba(0,0,0,0.08);
+
+    background: rgba(201,175,130,0.25);
+
+    font-family: var(--font-body);
+    font-size: 20px;
+
+    text-align: center;
+
+    margin-bottom: 22px;
+
+    transition: all .4s cubic-bezier(.16,1,.3,1);
+}
+
+.iban-input:focus,
+.iris-input:focus {
+    outline: none;
+
+    border-color: rgba(191,160,106,0.5);
+
+    box-shadow:
+        0 10px 30px rgba(191,160,106,0.12);
+}
+
+.copy-btn {
+    padding: 10px 26px;
+
+    border-radius: 40px;
+
+    border: 1px solid rgba(191,160,106,0.4);
+
+    background: transparent;
+
+    font-family: var(--font-body);
+    font-size: 12px;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--accent);
+
+    cursor: pointer;
+
+    transition: all .5s cubic-bezier(.16,1,.3,1);
+}
+
+.copy-btn:hover {
+    background: var(--accent);
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+.registry-note {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: var(--muted);
+
+    font-family: var(--font-body);
+    font-size: 16px;
+	font-style: italic;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+    padding: 40px 0 40px;
+
+    position: relative;
+    background: var(--bg);
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(191,160,106,0.05),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+.footer-content {
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+}
+
+.footer-ornament {
+    font-size: 28px;
+    color: var(--accent);
+
+    opacity: 0.6;
+
+    margin-bottom: 40px;
+}
+
+.footer-text {
+    font-family: var(--font-heading);
+
+    font-size: 32px;
+    letter-spacing: 3px;
+
+    margin-bottom: 60px;
+
+    color: var(--text);
+}
+
+.contact-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 70px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+    font-family: var(--font-body);
+}
+
+.social-icon {
+    font-size: 26px;
+    text-decoration: none;
+
+    opacity: 0.8;
+
+    transition: transform .5s cubic-bezier(.16,1,.3,1);
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+}
+
+.contact-name {
+    font-family: var(--font-heading);
+
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    color: var(--accent);
+}
+
+.contact-phone {
+    font-family: var(--font-body);
+
+    font-size: 17px;
+    color: var(--muted);
+}
+
+.footer-copyright {
+    font-size: 15px;
+    color: var(--muted);
+
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* ========== MISC ==========*/
+
+@media (max-width: 900px) {
+
+    .invitation-grid,
+    .wedding-details,
+    .registry-options,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        padding: 25px;
+    }
+
+    .couple-names {
+        gap: 14px;
+    }
+
+    :root {
+        --section-padding: 80px;
+    }
+}
+
+.heart-pulse {
+    animation: heartPulse 1.2s ease;
+}
+
+@keyframes heartPulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    30% { transform: scale(1.08); }
+    60% { transform: scale(1); }
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(40px) scale(0.3);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-500px) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* ==========================
+   MOBILE / TABLET ADJUSTMENTS
+   ========================== */
+
+@media (max-width: 900px) {
+    :root { --section-padding: 56px; }
+}
+
+@media (max-width: 768px) {
+    /* Hero */
+    .hero { height: auto; padding: 88px 0; background-position: top; }
+    .hero-content { padding: 20px; }
+    .hero-top-text { font-size: 12px; letter-spacing: 4px; }
+
+    /* Names */
+    .couple-names { font-size: clamp(40px, 12vw, 72px); gap: 12px; }
+    .signature { font-size: clamp(28px, 10vw, 64px); }
+
+    /* Countdown */
+    .luxury-countdown { gap: 12px; margin-top: 36px; }
+    .countdown-box { width: 78px; height: 78px; border-radius: 18px; }
+    .countdown-box span { font-size: 28px; }
+
+    /* Section titles & spacing */
+    .section-title { font-size: clamp(30px, 5.2vw, 44px); margin-bottom: 48px; }
+    .invitation, .rsvp, .gift-registry { padding: 64px 0; }
+
+    /* Forms */
+    .rsvp-form { padding: 34px 20px; border-radius: 28px; }
+    .form-row { grid-template-columns: 1fr; gap: 18px; }
+    .form-group input, .form-group select { padding: 14px 18px; font-size: 16px; }
+    .form-group label { font-size: 13px; }
+    .submit-btn { padding: 14px 28px; font-size: 13px; }
+
+    /* Detail cards */
+    .detail-card { padding: 40px 28px; border-radius: 28px; }
+    .detail-card h3 { font-size: 30px; }
+    .detail-time, .detail-subtitle { font-size: 44px; }
+
+    /* Registry cards */
+    .registry-card { padding: 36px 26px; }
+    .registry-icon { width: 96px; height: 96px; margin-bottom: 12px; }
+    .registry-card h3 { font-size: 22px; margin-bottom: 20px; }
+    .iban-input, .iris-input { font-size: 16px; padding: 14px 18px; }
+
+    /* Footer */
+    .footer-text { font-size: 22px; }
+
+    /* Controls */
+    .music-control { width: 50px; height: 50px; bottom: 18px; right: 18px; }
+}
+
+@media (max-width: 420px) {
+    :root { --section-padding: 48px; }
+
+    .hero { padding: 64px 0; }
+    .hero-top-text { font-size: 11px; }
+    .couple-names { font-size: clamp(26px, 14vw, 48px); gap: 8px; }
+    .signature { font-size: clamp(18px, 12vw, 48px); }
+
+    .couple-names .ampersand { flex-basis: 100%; font-size: 1.05em; margin: 6px 0; }
+
+    .couple-names { gap: 6px; }
+
+    .countdown-box { width: 68px; height: 68px; }
+    .countdown-box span { font-size: 24px; }
+    .countdown-box small { font-size: 7px; }
+
+    .section-title { font-size: clamp(24px, 7vw, 36px); margin-bottom: 32px; }
+
+    .rsvp-form { padding: 28px 16px; }
+    .form-group input, .form-group select { padding: 12px 14px; font-size: 15px; }
+    .submit-btn { padding: 12px 22px; font-size: 13px; }
+
+    .map-link { padding: 10px 18px; font-size: 12px; }
+
+    .footer-ornament { font-size: 22px; }
+
+    /* Use a smaller hero image on very small screens if available */
+    .hero {
+        background-image:
+            linear-gradient(
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.35)
+            ),
+            url("assets/hero-mobile.png");
+        background-size: cover;
+        background-position: center top;
+    }
+    /* Tiny screens: registry icon and text shrink */
+    .registry-icon { width: 72px; height: 72px; margin-bottom: 10px; }
+    .registry-card h3 { font-size: 18px; margin-bottom: 12px; }
+    .iban-input, .iris-input { font-size: 15px; padding: 12px 14px; }
+}
+
+/* Friendly touch: increase tap targets on very small screens */
+@media (max-width: 360px) {
+    .submit-btn, .map-link, .copy-btn { padding: 12px 20px; }
+}
+
+/* Responsive registry/bank icon images */
+.bank-icon-img,
+.iris-icon-img,
+.registry-icon img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
+}

@@ -1,5 +1,6 @@
-Bro o gamos tis xronias dixos amfivolia (fr fr)
+💍 Χ & Λ — Digital Wedding Invitation
 
+A modern, elegant, and fully responsive wedding invitation built with pure HTML & CSS.
 
-Vion anthosparton!!!!
+Designed with love, minimalism, and timeless aesthetics — optimized for both desktop and mobile.
 
